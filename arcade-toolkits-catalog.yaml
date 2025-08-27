@@ -1,0 +1,510 @@
+# Arcade.dev Toolkits Catalog
+# Complete list of all currently implemented toolkits and their operations
+# Generated: 2025-08-27
+
+toolkits:
+  development:
+    - name: "GitHub"
+      operation_count: 16
+      operations:
+        - name: "SetStarred"
+          description: "Star or unstar a GitHub repository"
+        - name: "ListStargazers"
+          description: "List stargazers of a repository"
+        - name: "CreateIssue"
+          description: "Create an issue in a repository"
+        - name: "CreateIssueComment"
+          description: "Add a comment to an issue"
+        - name: "ListPullRequests"
+          description: "List pull requests in a repository"
+        - name: "GetPullRequest"
+          description: "Retrieve details of a specific pull request"
+        - name: "UpdatePullRequest"
+          description: "Modify a pull request"
+        - name: "ListPullRequestCommits"
+          description: "List commits on a pull request"
+        - name: "CreateReplyForReviewComment"
+          description: "Reply to a review comment"
+        - name: "ListReviewCommentsOnPullRequest"
+          description: "List review comments on a pull request"
+        - name: "CreateReviewComment"
+          description: "Create a review comment on a pull request"
+        - name: "CountStargazers"
+          description: "Count repository stars"
+        - name: "ListOrgRepositories"
+          description: "List repositories in an organization"
+        - name: "GetRepository"
+          description: "Get repository details"
+        - name: "ListRepositoryActivities"
+          description: "List repository change history"
+        - name: "ListReviewCommentsInARepository"
+          description: "List review comments in a repository"
+      missing_operations:
+        - "CreatePullRequest"
+        - "ForkRepository"
+        - "PushCode"
+        - "CreateBranch"
+      limitations: "Missing critical operations for repository management and code pushing"
+
+    - name: "E2B"
+      operation_count: "unknown"
+      status: "Available but operations not detailed in documentation"
+
+    - name: "Firecrawl"
+      operation_count: "unknown"
+      status: "Available but operations not detailed in documentation"
+
+  productivity_docs:
+    - name: "Gmail"
+      operation_count: 9
+      operations:
+        - name: "SendEmail"
+          description: "Send an email using the Gmail API"
+        - name: "SendDraftEmail"
+          description: "Send a draft email"
+        - name: "WriteDraftEmail"
+          description: "Compose a new email draft"
+        - name: "UpdateDraftEmail"
+          description: "Update an existing email draft"
+        - name: "DeleteDraftEmail"
+          description: "Delete a draft email"
+        - name: "TrashEmail"
+          description: "Move an email to the trash folder"
+        - name: "ListDraftEmails"
+          description: "List draft emails in the user's mailbox"
+        - name: "ListEmailsByHeader"
+          description: "Search for emails by header"
+        - name: "ListEmails"
+          description: "Read emails from a Gmail account"
+      limitations: "TrashEmail only available on self-hosted instances"
+
+    - name: "Google Calendar"
+      operation_count: 6
+      operations:
+        - name: "ListCalendars"
+          description: "List the calendars that the user can access"
+        - name: "CreateEvent"
+          description: "Create a new event in the specified calendar"
+        - name: "ListEvents"
+          description: "List events from the specified calendar within date range"
+        - name: "UpdateEvent"
+          description: "Update an existing event in the specified calendar"
+        - name: "DeleteEvent"
+          description: "Delete an event from Google Calendar"
+        - name: "FindTimeSlotsWhenEveryoneIsFree"
+          description: "Find free time slots for multiple people"
+      missing_operations:
+        - "CreateRecurringEvent"
+        - "ManageCalendarSharing"
+        - "BookMeetingRooms"
+
+    - name: "Google Docs"
+      operation_count: 8
+      operations:
+        - name: "GetDocumentById"
+          description: "Retrieve a Google Docs document by ID"
+        - name: "InsertTextAtEndOfDocument"
+          description: "Insert text at the end of a document"
+        - name: "CreateBlankDocument"
+          description: "Create a blank Google Docs document"
+        - name: "CreateDocumentFromText"
+          description: "Create a Google Docs document with text content"
+        - name: "SearchDocuments"
+          description: "Search Google documents in Google Drive"
+        - name: "SearchAndRetrieveDocuments"
+          description: "Search and return documents with text content"
+        - name: "ListDocumentComments"
+          description: "List all comments on a document"
+        - name: "CommentOnDocument"
+          description: "Comment on a specific document"
+      limitations: "Not available in Arcade Cloud - only works with self-hosted instances"
+      missing_operations:
+        - "RichTextEditing"
+        - "DocumentFormatting"
+        - "InsertImages"
+
+    - name: "Google Sheets"
+      operation_count: "6+"
+      operations:
+        - name: "CreateSpreadsheet"
+          description: "Create a new spreadsheet"
+        - name: "WriteToCell"
+          description: "Write a value to a single cell"
+        - name: "UpdateCells"
+          description: "Write values to multiple cells using flexible data format"
+        - name: "AddNoteToCell"
+          description: "Add a note to a specific cell"
+        - name: "SearchSpreadsheets"
+          description: "Search for spreadsheets in Google Drive"
+        - name: "GetSpreadsheet"
+          description: "Get specified range of cells from a sheet"
+      missing_operations:
+        - "CreateFormulas"
+        - "CreateCharts"
+        - "FormatCells"
+        - "CreatePivotTables"
+
+    - name: "Google Drive"
+      operation_count: 3
+      operations:
+        - name: "GetFileTreeStructure"
+          description: "Get file/folder tree structure of Google Drive"
+        - name: "GenerateGoogleFilePickerUrl"
+          description: "Generate a Google File Picker URL"
+        - name: "SearchFiles"
+          description: "Search for files in Google Drive"
+
+    - name: "Notion"
+      operation_count: 7
+      operations:
+        - name: "GetPageContentById"
+          description: "Get Notion page content as markdown by ID"
+        - name: "GetPageContentByTitle"
+          description: "Get Notion page content as markdown by title"
+        - name: "CreatePage"
+          description: "Create a new Notion page"
+        - name: "SearchByTitle"
+          description: "Search for pages/databases by title"
+        - name: "GetObjectMetadata"
+          description: "Get metadata of a Notion object"
+        - name: "GetWorkspaceStructure"
+          description: "Get complete workspace structure"
+        - name: "AppendContentToEndOfPage"
+          description: "Append markdown content to page end"
+      missing_operations:
+        - "DatabaseOperations"
+        - "PropertyManagement"
+        - "TemplateManagement"
+
+    - name: "Dropbox"
+      operation_count: 3
+      operations:
+        - name: "ListItemsInFolder"
+          description: "List all items in a folder"
+        - name: "SearchFilesAndFolders"
+          description: "Search for files and folders in Dropbox"
+        - name: "DownloadFile"
+          description: "Download a file from Dropbox"
+      limitations: "Very limited functionality - only 3 tools total"
+      missing_operations:
+        - "UploadFile"
+        - "ShareFiles"
+        - "CreateFolders"
+        - "DeleteFiles"
+
+  project_management:
+    - name: "Jira"
+      operation_count: 18
+      operations:
+        - name: "CreateIssue"
+          description: "Create new Jira issues"
+        - name: "UpdateIssue"
+          description: "Modify existing issues"
+        - name: "ListIssues"
+          description: "Retrieve issues for a project"
+        - name: "GetIssueById"
+          description: "Fetch specific issue details"
+        - name: "SearchIssuesWithoutJql"
+          description: "Parameterized issue search"
+        - name: "SearchIssuesWithJql"
+          description: "Advanced issue search using JQL"
+        - name: "ListProjects"
+          description: "Browse available projects"
+        - name: "GetProjectById"
+          description: "Retrieve specific project details"
+        - name: "GetBoards"
+          description: "Retrieve Jira boards"
+        - name: "GetBoardBacklogIssues"
+          description: "Get backlog issues for a board"
+        - name: "ListSprintsForBoards"
+          description: "Retrieve sprints"
+        - name: "GetSprintIssues"
+          description: "Get issues in a specific sprint"
+        - name: "AddIssuesToSprint"
+          description: "Add issues to a sprint"
+        - name: "ListIssueTypesByProject"
+          description: "Get issue types for a project"
+        - name: "ListUsers"
+          description: "Browse Jira users"
+        - name: "GetUserById"
+          description: "Retrieve specific user details"
+        - name: "ListPrioritiesAvailableToAProject"
+          description: "Get project-specific priorities"
+        - name: "AttachFileToIssue"
+          description: "Add file attachments"
+
+    - name: "Asana"
+      operation_count: 16
+      operations:
+        - name: "GetProjectById"
+          description: "Retrieve a project using its ID"
+        - name: "ListProjects"
+          description: "List projects for teams/workspaces"
+        - name: "GetTaskById"
+          description: "Retrieve a specific task using its ID"
+        - name: "GetTasksWithoutId"
+          description: "Search tasks using filters"
+        - name: "CreateTask"
+          description: "Create a new task"
+        - name: "UpdateTask"
+          description: "Modify an existing task"
+        - name: "MarkTaskAsCompleted"
+          description: "Complete a task"
+        - name: "GetSubtasksFromATask"
+          description: "Retrieve subtasks for a task"
+        - name: "AttachFileToTask"
+          description: "Add a file to a task"
+        - name: "GetTagById"
+          description: "Retrieve a tag using its ID"
+        - name: "CreateTag"
+          description: "Create a new tag"
+        - name: "ListTags"
+          description: "List tags in a workspace"
+        - name: "ListUsers"
+          description: "List users in a workspace"
+        - name: "GetUserById"
+          description: "Retrieve a specific user"
+        - name: "GetTeamById"
+          description: "Retrieve a specific team"
+        - name: "ListTeams"
+          description: "List teams in a workspace"
+
+    - name: "Linear"
+      operation_count: 2
+      operations:
+        - name: "GetIssue"
+          description: "Get detailed information about a specific Linear issue"
+        - name: "GetTeams"
+          description: "Get Linear teams and team information including members"
+      limitations: "Read-only operations - no creation/modification capabilities"
+
+  social_communication:
+    - name: "Slack"
+      operation_count: 7
+      operations:
+        - name: "GetUsersInfo"
+          description: "Retrieves user information by ID, username, or email"
+        - name: "ListUsers"
+          description: "Lists all users in Slack team"
+        - name: "SendMessage"
+          description: "Sends message to channel, DM, or multi-person conversation"
+        - name: "GetUsersInConversation"
+          description: "Retrieves users in a Slack conversation"
+        - name: "GetMessages"
+          description: "Retrieves messages from conversations"
+        - name: "GetConversationMetadata"
+          description: "Retrieves metadata for conversations"
+        - name: "ListConversations"
+          description: "Lists conversation metadata"
+      missing_operations:
+        - "CreateChannels"
+        - "UploadFiles"
+        - "SetupWorkflows"
+
+    - name: "LinkedIn"
+      operation_count: 1
+      operations:
+        - name: "CreateTextPost"
+          description: "Share a new text post to LinkedIn"
+      limitations: "Only text posting available - no messaging, connection management, or profile operations"
+      missing_operations:
+        - "SendMessages"
+        - "ReadMessages"
+        - "ManageConnections"
+        - "ReadProfile"
+
+    - name: "X"
+      operation_count: 7
+      operations:
+        - name: "LookupSingleUserByUsername"
+          description: "Look up a user by username"
+        - name: "PostTweet"
+          description: "Post a tweet"
+        - name: "ReplyToTweet"
+          description: "Reply to a tweet"
+        - name: "DeleteTweetById"
+          description: "Delete a tweet"
+        - name: "SearchRecentTweetsByUsername"
+          description: "Search recent tweets by username (last 7 days)"
+        - name: "SearchRecentTweetsByKeywords"
+          description: "Search recent tweets by keywords (last 7 days)"
+        - name: "LookupTweetById"
+          description: "Look up a tweet by tweet ID"
+
+    - name: "Discord"
+      operation_count: 1
+      operations:
+        - name: "list_servers"
+          description: "List a Discord user's servers they are a member of"
+      limitations: "Very limited functionality - only server listing available"
+      missing_operations:
+        - "SendMessages"
+        - "ManageChannels"
+        - "ManageUsers"
+
+    - name: "Reddit"
+      operation_count: 9
+      operations:
+        - name: "SubmitTextPost"
+          description: "Submit a text-based post to a subreddit"
+        - name: "CommentOnPost"
+          description: "Comment on a Reddit post"
+        - name: "ReplyToComment"
+          description: "Reply to a Reddit comment"
+        - name: "GetPostsInSubreddit"
+          description: "Get posts in the specified subreddit"
+        - name: "GetContentOfPost"
+          description: "Get the content of a Reddit post"
+        - name: "GetContentOfMultiplePosts"
+          description: "Get content of multiple Reddit posts"
+        - name: "GetTopLevelCommentsOfPost"
+          description: "Get top-level comments of a post"
+        - name: "CheckSubredditAccess"
+          description: "Check if subreddit exists and is accessible"
+        - name: "GetSubredditRules"
+          description: "Get the rules of specified subreddit"
+
+    - name: "Twilio"
+      operation_count: 2
+      operations:
+        - name: "SMS Messaging"
+          description: "Send SMS to specified phone numbers"
+        - name: "WhatsApp Messaging"
+          description: "Send WhatsApp messages to specified phone numbers"
+
+    - name: "Zoom"
+      operation_count: 2
+      operations:
+        - name: "ListUpcomingMeetings"
+          description: "List upcoming meetings within next 24 hours"
+        - name: "GetMeetingInvitation"
+          description: "Retrieve invitation note for specific meeting"
+
+  entertainment:
+    - name: "Spotify"
+      operation_count: 13
+      operations:
+        - name: "GetTrackFromId"
+          description: "Get information about a track"
+        - name: "AdjustPlaybackPosition"
+          description: "Adjust playback position within current track"
+        - name: "SkipToPreviousTrack"
+          description: "Skip to previous track in queue"
+        - name: "SkipToNextTrack"
+          description: "Skip to next track in queue"
+        - name: "PausePlayback"
+          description: "Pause currently playing track"
+        - name: "ResumePlayback"
+          description: "Resume currently playing track"
+        - name: "StartTracksPlaybackById"
+          description: "Start playback of list of tracks"
+        - name: "GetPlaybackState"
+          description: "Get current playback state information"
+        - name: "GetCurrentlyPlaying"
+          description: "Get currently playing track information"
+        - name: "PlayArtistByName"
+          description: "Play song by artist and queue more by same artist"
+        - name: "PlayTrackByName"
+          description: "Play song by name"
+        - name: "GetAvailableDevices"
+          description: "Get available devices"
+        - name: "Search"
+          description: "Search Spotify catalog information"
+
+    - name: "Twitch"
+      operation_count: 0
+      status: "Framework only - no pre-built operations"
+      limitations: "Authentication framework available but no pre-built tools"
+
+  finance:
+    - name: "Stripe"
+      operation_count: "11+"
+      operations:
+        - name: "CreateCustomer"
+          description: "Create a new customer"
+        - name: "ListCustomers"
+          description: "List existing customers"
+        - name: "CreateProduct"
+          description: "Create a new product"
+        - name: "ListProducts"
+          description: "List existing products"
+        - name: "CreatePrice"
+          description: "Create pricing for products"
+        - name: "ListPrices"
+          description: "List existing prices"
+        - name: "CreatePaymentLink"
+          description: "Create payment links"
+        - name: "ListInvoices"
+          description: "List invoices"
+        - name: "CreateInvoice"
+          description: "Create new invoices"
+        - name: "CreateInvoiceItem"
+          description: "Create invoice line items"
+        - name: "FinalizeInvoice"
+          description: "Finalize and send invoices"
+      missing_operations:
+        - "SubscriptionManagement"
+        - "RefundProcessing"
+        - "WebhookManagement"
+
+  search:
+    - name: "Google Search"
+      operation_count: "unknown"
+      status: "Available but operations not fully detailed"
+    - name: "Google News"
+      operation_count: "unknown"
+      status: "Available but operations not fully detailed"
+    - name: "Google Jobs"
+      operation_count: "unknown"
+      status: "Available but operations not fully detailed"
+    - name: "Google Maps"
+      operation_count: "unknown"
+      status: "Available but operations not fully detailed"
+    - name: "YouTube"
+      operation_count: "unknown"
+      status: "Available but operations not fully detailed"
+
+  databases:
+    - name: "PostgreSQL"
+      operation_count: "unknown"
+      status: "Available but operations not detailed"
+    - name: "ClickHouse"
+      operation_count: "unknown"
+      status: "Available but operations not detailed"
+
+# Summary Statistics
+summary:
+  total_toolkits: 30+
+  most_comprehensive:
+    - name: "Jira"
+      operations: 18
+    - name: "GitHub"
+      operations: 16
+    - name: "Asana"
+      operations: 16
+    - name: "Spotify"
+      operations: 13
+  
+  most_limited:
+    - name: "LinkedIn"
+      operations: 1
+    - name: "Discord"  
+      operations: 1
+    - name: "Linear"
+      operations: 2
+    - name: "Twitch"
+      operations: 0
+
+  critical_limitations:
+    - "GitHub missing CreatePullRequest functionality"
+    - "LinkedIn only supports text posting"
+    - "Discord only supports server listing"
+    - "Dropbox missing file upload capabilities"
+    - "Google Docs unavailable in Arcade Cloud"
+
+# Notes
+notes:
+  - "This catalog represents currently implemented toolkits as of August 2027"
+  - "Many toolkits have 'Coming Soon' features not included in this list"
+  - "Some operation counts are approximate due to documentation limitations"
+  - "Missing operations represent common use cases not currently supported"
