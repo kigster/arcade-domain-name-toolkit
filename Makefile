@@ -79,11 +79,11 @@ run: check-env ## Run the domain monitor with full Arcade integration
 
 run-simple: ## Run simple domain monitoring test (no Arcade required)
 	@echo "🚀 Running simple domain monitoring test..."
-	python test_simple_monitoring.py
+	cd domain_name_monitor && python test_simple_monitoring.py
 
 run-config: ## Test configuration loading
 	@echo "🔧 Testing configuration loading..."
-	python config_loader.py
+	cd domain_name_monitor && python config_loader.py
 
 # Development targets
 clean: ## Clean up generated files
@@ -101,10 +101,10 @@ clean: ## Clean up generated files
 
 validate-config: ## Validate YAML configuration file
 	@echo "🔧 Validating configuration..."
-	@if [ -f "domain_monitor_config.yaml" ]; then \
-		python -c "from config_loader import load_config; config = load_config('domain_monitor_config.yaml'); print(f'✅ Config valid: {len(config.domains)} domains configured')"; \
+	@if [ -f "domain_name_monitor/domain_monitor_config.yaml" ]; then \
+		cd domain_name_monitor && python -c "from config_loader import load_config; config = load_config('domain_monitor_config.yaml'); print(f'✅ Config valid: {len(config.domains)} domains configured')"; \
 	else \
-		echo "❌ domain_monitor_config.yaml not found"; \
+		echo "❌ domain_name_monitor/domain_monitor_config.yaml not found"; \
 		exit 1; \
 	fi
 
@@ -176,11 +176,11 @@ status: ## Show current project status
 	@if pip list | grep -q "pyyaml"; then echo "   ✅ pyyaml installed"; else echo "   ❌ pyyaml not installed"; fi
 	@echo ""
 	@echo "🔧 Configuration:"
-	@if [ -f "domain_monitor_config.yaml" ]; then echo "   ✅ Configuration file exists"; else echo "   ❌ Configuration file missing"; fi
+	@if [ -f "domain_name_monitor/domain_monitor_config.yaml" ]; then echo "   ✅ Configuration file exists"; else echo "   ❌ Configuration file missing"; fi
 	@if [ -f ".env" ]; then echo "   ✅ Environment file exists"; else echo "   ❌ Environment file missing"; fi
 	@echo ""
 	@echo "🧪 Tests:"
-	@if [ -d "tests" ]; then echo "   ✅ Test directory exists ($(ls tests/*.py 2>/dev/null | wc -l | tr -d ' ') test files)"; else echo "   ❌ Test directory missing"; fi
+	@if [ -d "domain_name_monitor/tests" ]; then echo "   ✅ Test directory exists ($(ls domain_name_monitor/tests/*.py 2>/dev/null | wc -l | tr -d ' ') test files)"; else echo "   ❌ Test directory missing"; fi
 	@echo ""
 	@echo "📁 Generated Files:"
 	@if [ -f "domain_check_results.json" ]; then echo "   📄 domain_check_results.json ($(stat -f%z domain_check_results.json 2>/dev/null || stat -c%s domain_check_results.json 2>/dev/null || echo "unknown") bytes)"; fi
