@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(bundle exec rspec:*)",
+      "Bash(./bin/kitchen:*)"
+    ],
+    "deny": []
+  }
+}
