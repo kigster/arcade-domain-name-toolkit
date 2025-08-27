@@ -28,8 +28,9 @@ Without Arcade, building a production AI agent that can:
 
 ## How Arcade Works
 
-```plantuml
-@startuml
+<div hidden>
+```
+@startuml firstDiagram
 !theme plain
 
 actor User as U
@@ -63,6 +64,9 @@ end note
 
 @enduml
 ```
+</div>
+
+![](firstDiagram.svg)
 
 ## Core Architecture
 
