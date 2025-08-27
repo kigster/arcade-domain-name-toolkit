@@ -67,7 +67,7 @@ end note
 ```
 -->
 
-<img width="793" height="675" alt="image" src="https://github.com/user-attachments/assets/3a7465e5-356e-4c89-a703-f4d269fabd1e" />
+<img width="903" height="850" alt="image" src="https://github.com/user-attachments/assets/77d95bad-2a3b-41f7-9c37-d235323c5c0b" />
 
 ## Core Architecture
 
