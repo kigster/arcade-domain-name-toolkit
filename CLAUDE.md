@@ -4,60 +4,7 @@ This repository demonstrates a comprehensive implementation of Arcade.dev's tool
 
 ## Project Architecture Overview
 
-```plantuml
-@startuml
-!define RECTANGLE class
-
-package "Arcade Domain Name Toolkit" {
-  RECTANGLE problem [
-    Problem Statement
-    ----
-    Original PDF requirements
-  ]
-  
-  RECTANGLE client_js [
-    JavaScript Client
-    ----
-    - GitHub toolkit integration
-    - Math toolkit usage
-    - Node.js implementation
-  ]
-  
-  RECTANGLE client_py [
-    Python Client
-    ----
-    - GitHub repository info
-    - Authentication demo
-    - Simple API usage
-  ]
-  
-  RECTANGLE domain_toolkit [
-    Domain Name Toolkit
-    ----
-    - Custom Arcade toolkit
-    - Domain expiry checking
-    - SSL certificate monitoring
-    - Configurable thresholds
-  ]
-  
-  RECTANGLE domain_monitor [
-    Domain Monitor App
-    ----
-    - Production monitoring
-    - Email notifications
-    - YAML configuration
-    - Comprehensive logging
-  ]
-}
-
-client_js --> "Arcade API" : Uses GitHub & Math toolkits
-client_py --> "Arcade API" : Uses GitHub toolkit
-domain_toolkit --> "Arcade API" : Custom toolkit deployment
-domain_monitor --> domain_toolkit : Uses toolkit functions
-domain_monitor --> "Email Service" : Sends notifications
-
-@enduml
-```
+![uml](doc/img/domain-toolkit-uml.png)
 
 ## Project Components
 
@@ -140,31 +87,7 @@ It will run each project by issuing `make run` inside each folder, which should 
 
 ## Development Workflow
 
-```plantuml
-@startuml
-!theme plain
-
-participant Developer
-participant "Arcade API" as API
-participant "Domain Toolkit" as Toolkit
-participant "Monitor App" as Monitor
-participant "Email Service" as Email
-
-Developer -> API : Authenticate with API key
-Developer -> Toolkit : Deploy custom toolkit
-API -> Toolkit : Validate & register toolkit
-
-Developer -> Monitor : Configure domains in YAML
-Developer -> Monitor : Run monitoring
-Monitor -> Toolkit : Call domain/SSL check functions
-Toolkit -> API : Execute toolkit functions
-API --> Toolkit : Return domain/SSL status
-Toolkit --> Monitor : Return check results
-Monitor -> Monitor : Evaluate thresholds
-Monitor -> Email : Send notifications if needed
-
-@enduml
-```
+![sequence](doc/img/project-sequence-uml.png)
 
 ## Technology Stack
 
