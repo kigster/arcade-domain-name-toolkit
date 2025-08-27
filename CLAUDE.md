@@ -8,7 +8,7 @@ This repository demonstrates a comprehensive implementation of Arcade.dev's tool
 @startuml
 !define RECTANGLE class
 
-package "Arcade Sample Toolkit" {
+package "Arcade Domain Name Toolkit" {
   RECTANGLE problem [
     Problem Statement
     ----
