@@ -133,42 +133,7 @@ Arcade consists of three main components:
 
 ### Supported Languages and Frameworks
 
-```plantuml
-@startuml
-!theme plain
-
-package "AI Frameworks" {
-  [LangChain/LangGraph]
-  [CrewAI]
-  [OpenAI Agents]
-  [Vercel AI]
-  [Google ADK]
-}
-
-package "Arcade SDKs" {
-  [Python SDK]
-  [JavaScript SDK]
-  [Go SDK]
-}
-
-package "External Services" {
-  [Gmail]
-  [Slack]
-  [GitHub]
-  [Stripe]
-  [40+ Others]
-}
-
-[AI Frameworks] --> [Arcade SDKs] : Tool calls
-[Arcade SDKs] --> [External Services] : Authenticated API calls
-
-note top of [Arcade SDKs]
-  Universal authentication layer
-  handles OAuth, tokens, permissions
-end note
-
-@enduml
-```
+<img width="1022" height="699" alt="image" src="https://github.com/user-attachments/assets/06c09848-4483-438c-a605-910a2ce30a97" />
 
 ### Quick Start Example
 
@@ -210,34 +175,7 @@ result = arcade.tools.call(
 
 ## Competitive Landscape
 
-```plantuml
-@startuml
-!theme plain
-
-map "AI Tool-Calling Market" as market {
-  Enterprise Focus => Arcade.dev
-  Open Source => Composio
-  Workflow Automation => Zapier AI Actions
-  Developer Platform => LangChain Tools
-}
-
-package "Arcade.dev Positioning" {
-  note as arcadeNote
-    **Strengths:**
-    • Production-first architecture
-    • Enterprise security focus
-    • Multi-framework support
-    • MCP integration
-    
-    **Challenges:**
-    • Smaller toolkit ecosystem (40 vs 250+)
-    • Newer market presence
-    • Limited documentation completeness
-  end note
-}
-
-@enduml
-```
+<img width="711" height="331" alt="image" src="https://github.com/user-attachments/assets/6e7322b7-66ab-4268-b7ef-0108dfb335e7" />
 
 ## Critical Assessment: Where Arcade Falls Short
 
@@ -343,3 +281,73 @@ Arcade.dev represents a sophisticated solution to a real infrastructure problem 
 For developers building AI agents, Arcade provides immediate value for basic authenticated operations across major platforms. However, complex applications will likely require hybrid approaches combining Arcade's authentication infrastructure with custom development for missing functionality.
 
 The platform's success will ultimately depend on how quickly they can close the functionality gaps while maintaining their security and enterprise-readiness advantages. For now, Arcade is best viewed as a powerful foundation that significantly reduces authentication complexity, but one that may require supplementation for comprehensive real-world applications.
+
+## Appendix
+
+Sources for the PlanUML:
+
+```plantuml
+@startuml
+!theme plain
+
+package "AI Frameworks" {
+  [LangChain/LangGraph]
+  [CrewAI]
+  [OpenAI Agents]
+  [Vercel AI]
+  [Google ADK]
+}
+
+package "Arcade SDKs" {
+  [Python SDK]
+  [JavaScript SDK]
+  [Go SDK]
+}
+
+package "External Services" {
+  [Gmail]
+  [Slack]
+  [GitHub]
+  [Stripe]
+  [40+ Others]
+}
+
+[AI Frameworks] --> [Arcade SDKs] : Tool calls
+[Arcade SDKs] --> [External Services] : Authenticated API calls
+
+note top of [Arcade SDKs]
+  Universal authentication layer
+  handles OAuth, tokens, permissions
+end note
+
+@enduml
+```
+
+```plantuml
+@startuml
+!theme plain
+
+map "AI Tool-Calling Market" as market {
+  Enterprise Focus => Arcade.dev
+  Open Source => Composio
+  Workflow Automation => Zapier AI Actions
+  Developer Platform => LangChain Tools
+}
+
+package "Arcade.dev Positioning" {
+  note as arcadeNote
+    **Strengths:**
+    • Production-first architecture
+    • Enterprise security focus
+    • Multi-framework support
+    • MCP integration
+    
+    **Challenges:**
+    • Smaller toolkit ecosystem (40 vs 250+)
+    • Newer market presence
+    • Limited documentation completeness
+  end note
+}
+
+@enduml
+```
