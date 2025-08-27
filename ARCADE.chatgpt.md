@@ -22,6 +22,8 @@ Arcade.dev is a developer platform that enables AI agents to perform real-world 
 
 ## High-Level Architecture
 
+<div hidden style="display: none;">
+  
 ```plantuml
 @startuml
 actor User
@@ -36,7 +38,11 @@ ThirdPartyService --> ArcadeEngine: Confirmation
 ArcadeEngine --> Agent: "Event scheduled"
 Agent --> User: "Meeting scheduled for Tuesday, 3 PM"
 @enduml
-````
+```
+
+</div>
+
+<img width="853" height="355" alt="image" src="https://github.com/user-attachments/assets/b60a837d-25df-486e-8e16-5aea81e8d27e" />
 
 * **User**: Initiates a request (e.g. "Send meeting invite")
 * **Agent**: AI that determines which tool to call
