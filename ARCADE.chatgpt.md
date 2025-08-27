@@ -22,26 +22,6 @@ Arcade.dev is a developer platform that enables AI agents to perform real-world 
 
 ## High-Level Architecture
 
-<div hidden style="display: none;">
-  
-```plantuml
-@startuml
-actor User
-participant Agent
-participant ArcadeEngine
-participant ThirdPartyService
-
-User -> Agent: "Send meeting invite"
-Agent -> ArcadeEngine: Calls GoogleCalendar.CreateEvent (with user_id)
-ArcadeEngine -> ThirdPartyService: OAuth + API call
-ThirdPartyService --> ArcadeEngine: Confirmation
-ArcadeEngine --> Agent: "Event scheduled"
-Agent --> User: "Meeting scheduled for Tuesday, 3 PM"
-@enduml
-```
-
-</div>
-
 <img width="853" height="355" alt="image" src="https://github.com/user-attachments/assets/b60a837d-25df-486e-8e16-5aea81e8d27e" />
 
 * **User**: Initiates a request (e.g. "Send meeting invite")
@@ -139,4 +119,25 @@ Let me know if you'd like me to help extract tool lists from specific toolkit do
 [10]: https://developers.arcgis.com/arcade/?utm_source=chatgpt.com "Introduction | ArcGIS Arcade - Esri Developer"
 [11]: https://docs.arcade.dev/home/oai-agents/use-arcade-tools?utm_source=chatgpt.com "Use Arcade with OpenAI Agents"
 [12]: https://docs.arcade.dev/home/langchain/use-arcade-tools?utm_source=chatgpt.com "Use Arcade tools with LangGraph"
+
+
+---
+
+### Source for the UML Diagram
+  
+```plantuml
+@startuml
+actor User
+participant Agent
+participant ArcadeEngine
+participant ThirdPartyService
+
+User -> Agent: "Send meeting invite"
+Agent -> ArcadeEngine: Calls GoogleCalendar.CreateEvent (with user_id)
+ArcadeEngine -> ThirdPartyService: OAuth + API call
+ThirdPartyService --> ArcadeEngine: Confirmation
+ArcadeEngine --> Agent: "Event scheduled"
+Agent --> User: "Meeting scheduled for Tuesday, 3 PM"
+@enduml
+```
 
