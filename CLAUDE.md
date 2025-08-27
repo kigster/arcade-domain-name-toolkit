@@ -2,6 +2,29 @@
 
 This repo contains several projects that demonstrate the functionality and the SDK of the Arcade.dev's toolkits and other APIs. 
 
+This is top-level of the mono-repo containing a couple of projects, serving different purpose each.
+
+ * `problem` — contains the [original PDF with the interview problem statement](problem/problem-statement.pdf)
+ * `client_js_setstars` — is a standalone client tool, which serves as an example of using Arcade.dev's Toolkits (`Github` and `Math`) and within it a single tool each (`Github.SetRepoStars` and `Math.Sqrt` respectively).
+ * `client_py_getrepo` - a simple python client that similarly authenticates against YOUR Github account, and then prints information about a specific repo `kigster/githuh` — which is a simple ruby gem repo that has tests, but no CI/CD setup with Github Actions.
+ * `toolkit` - the custom toolkit that's been scaffolded using the `arcade new` command (to be created after we decide what the toolkit does)
+ * `app` - the app that utilizes the toolkit to perform something interesting (to be created after we choose the purpose of this app/toolkit combo)
+
+## Running Existing Examples
+
+1. Create an API key here: https://api.arcade.dev/dashboard/api-keys
+2. Store it in `.env` file in this project (we alredy have one)
+3. If using `direnv` run `direnv allow .` to load the value into the environment.
+
+Verify that `$ARCADE_API_KEY` is set, and if not source `.env` to get it set.
+
+You should be able to execute a command `make run` from the top level `Makefile`, which will then go into each of the following example projects and run them:
+
+ * `client_js_setstars`
+ * `client_py_getrepo`
+
+It will run each project by issuing `make run` inside each folder, which should install all the dependencies and execute the calls.
+
 ## Few Rules Before We Start
 
 1. Write all markdown documents using professional style and without any emojis ever.
