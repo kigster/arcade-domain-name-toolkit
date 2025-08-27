@@ -29,6 +29,7 @@ Without Arcade, building a production AI agent that can:
 ## How Arcade Works
 
 <div hidden>
+    
 ```
 @startuml firstDiagram
 !theme plain
@@ -64,9 +65,10 @@ end note
 
 @enduml
 ```
+
 </div>
 
-![](firstDiagram.svg)
+<img width="793" height="675" alt="image" src="https://github.com/user-attachments/assets/3a7465e5-356e-4c89-a703-f4d269fabd1e" />
 
 ## Core Architecture
 
