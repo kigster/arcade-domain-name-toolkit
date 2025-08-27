@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "client": "source ../.envrc && npx run arcade_repo_set_stars.mjs"
+  },
+  "dependencies": {
+    "@arcadeai/arcadejs": "^1.9.1"
+  }
+}

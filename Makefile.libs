@@ -1,0 +1,34 @@
+# Reusable makefile functions
+# vim: ft=make
+# vim: tabstop=8
+# vim: shiftwidth=8
+# vim: noexpandtab
+
+OS              := $(shell uname -s | tr '[:upper:]' '[:lower:]')
+MAKEFILE_PATH   := $(abspath $(lastword $(MAKEFILE_LIST)))
+CURRENT_DIR     := $(shell ( cd .; pwd -P ) )
+BRANCH          := $(shell git branch --show)
+BREW_BASH       := $(shell [[ -x /opt/homebrew/bin/bash ]] && echo "/opt/homebrew/bin/bash" || echo "/bin/bash")
+
+SHELL 		= $(BREW_BASH)
+
+help:		## Prints help message auto-generated from the comments.
+		@cat $(MAKEFILE_LIST) | \
+			grep -E '^[a-zA-Z_-]+:.*?## .*$$' | \
+			awk 'BEGIN {FS = ":.*?## "}; {printf "\033[32m%-20s\033[35m %s\033[0\n", $$1, $$2}' | \
+			sed '/^$$/d' | \
+			sort
+
+validate: 	## Ensure our API key is set in the environment
+		@$(BREW_BASH) -c '\
+		if [[ -z "$(ARCADE_API_KEY)" ]] ; then \
+			echo -e "${bldred}ERROR: ${bldred}you must set ARCADE_API_KEY environment variable."; \
+		        echo -e " ${bldgrn}HINT: place it in the ${txtylw}.env ${bldgrn}file at the root of this project."; \
+			echo -e "  ${txtgrn}AND: ${bldylw}source .env ${bldblk}# from project root";  \
+			exit 1; \
+		else \
+			echo -e "${txtgrn}GOOD, your ARCADE_API_KEY is in the environment.${clr}"; \
+		fi \
+		'
+load:		
+		[[ -f .env ]] && source .env
