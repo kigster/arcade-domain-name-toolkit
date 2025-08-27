@@ -1,7 +1,7 @@
 [[worker]]
 
 [worker.config]
-id = "demo-worker"
+id = "domain-name-toolkit"
 enabled = true
 timeout = 30
 retries = 3

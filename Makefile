@@ -3,8 +3,6 @@
 
 .PHONY: help install install-dev test test-verbose test-coverage clean lint format run run-simple setup check-env
 
-include Makefile.libs
-
 
 # Default target
 help: ## Show this help message
@@ -75,11 +73,9 @@ check-env: ## Check environment setup
 	fi
 	@echo "✅ Environment check passed"
 
-run: check-env load validate ## Run the domain monitor with full Arcade integration
+run: check-env ## Run the domain monitor with full Arcade integration
 	@echo "🚀 Running domain monitor (full version)..."
 	@cd domain_name_monitor && python domain_monitor_app.py && cd ..
-	@cd client_js_setstars && make run; cd ..
-	@cd client_py_getrepo  && make run; cd ..
 
 run-simple: ## Run simple domain monitoring test (no Arcade required)
 	@echo "🚀 Running simple domain monitoring test..."
