@@ -1,0 +1,119 @@
+# Domain Monitor Configuration
+# This file defines all domains to monitor and notification settings
+
+# Monitoring Settings
+monitoring:
+  # How many days before expiration to trigger alerts
+  alert_threshold_days: 30
+  
+  # Save results to JSON file after each run
+  save_results: true
+  results_filename: "domain_check_results.json"
+  
+  # User ID for Arcade authentication
+  user_id: "kig@kig.re"
+
+# Domains to Monitor
+# Each domain can have custom alert thresholds if needed
+domains:
+  - name: "kig.re"
+    description: "Konstantin's Blog"
+    # Optional: override global alert threshold for this domain
+    # alert_threshold_days: 60
+    
+  - name: "reinvent.one"
+    description: "ReinventONE Consultancy"
+    
+  - name: "re1.re" 
+    description: "Another domain"
+    
+  - name: "kig.house"
+    description: "Konstantin's house network"
+    
+  # Add your own domains here:
+  # - name: "yourdomain.com"
+  #   description: "My company website"
+  #   alert_threshold_days: 60  # Custom threshold
+  #   
+  # - name: "anotherdomain.org"
+  #   description: "Another important domain"
+
+# Notification Settings
+notifications:
+  # Email notifications via Gmail
+  email:
+    enabled: true
+    recipients:
+      - email: "kig@kig.re"
+        name: "Admin"
+      # Add more recipients:
+      # - email: "alerts@company.com" 
+      #   name: "Alerts Team"
+      # - email: "admin@yourdomain.com"
+      #   name: "Domain Admin"
+    
+    # Email template settings
+    subject_template: "🚨 Domain Expiration Alert - {count} domain(s) expiring soon"
+    include_detailed_info: true
+  
+  # Slack notifications (optional)
+  slack:
+    enabled: false
+    channel: "#alerts"
+    # Custom message template
+    message_template: "🚨 *Domain Alert* - {count} domain(s) expiring soon"
+    
+    # Emoji mapping for urgency levels
+    urgency_emojis:
+      critical: "🔴"  # <= 7 days
+      warning: "🟡"   # 8-30 days
+      info: "ℹ️"      # 31+ days
+
+# Advanced Settings
+advanced:
+  # Timeout settings for network operations
+  timeouts:
+    whois_timeout_seconds: 30
+    ssl_timeout_seconds: 10
+    
+  # Retry settings for failed checks
+  retry:
+    max_attempts: 3
+    retry_delay_seconds: 5
+    
+  # Logging settings
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+    include_timestamps: true
+    log_file: null  # Set to filename to log to file
+    
+  # Output formats
+  output:
+    console_colors: true
+    json_pretty_print: true
+    
+# Test Configuration
+# Used for unit tests and development
+testing:
+  # Mock domains for testing (won't make real network calls in tests)
+  mock_domains:
+    - name: "test-valid.example"
+      domain_days_until_expiry: 45
+      ssl_days_until_expiry: 20
+      
+    - name: "test-expiring.example"
+      domain_days_until_expiry: 15
+      ssl_days_until_expiry: 5
+      
+    - name: "test-expired.example"
+      domain_days_until_expiry: -5
+      ssl_days_until_expiry: -10
+      
+    - name: "test-error.example"
+      simulate_error: true
+      error_message: "Domain not found"
+      
+  # Test notification settings
+  test_notifications:
+    email_recipient: "test@example.com"
+    slack_channel: "#test-alerts"

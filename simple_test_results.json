@@ -1,0 +1,116 @@
+{
+  "checked_at": "2025-08-27T11:40:57.873998",
+  "results": [
+    {
+      "domain": "google.com",
+      "domain_check": {
+        "domain": "google.com",
+        "status": "success",
+        "expiration_date": "2028-09-14T04:00:00+00:00",
+        "days_until_expiry": 1113,
+        "is_expired": false,
+        "expires_soon": false,
+        "registrar": "MarkMonitor, Inc."
+      },
+      "ssl_check": {
+        "domain": "google.com",
+        "status": "success",
+        "expiration_date": "2025-09-29T08:34:02+00:00",
+        "days_until_expiry": 32,
+        "is_expired": false,
+        "expires_soon": false,
+        "subject": [
+          [
+            [
+              "commonName",
+              "*.google.com"
+            ]
+          ]
+        ],
+        "issuer": [
+          [
+            [
+              "countryName",
+              "US"
+            ]
+          ],
+          [
+            [
+              "organizationName",
+              "Google Trust Services"
+            ]
+          ],
+          [
+            [
+              "commonName",
+              "WR2"
+            ]
+          ]
+        ]
+      },
+      "checked_at": "2025-08-27T11:40:57.270615"
+    },
+    {
+      "domain": "github.com",
+      "domain_check": {
+        "domain": "github.com",
+        "status": "success",
+        "expiration_date": "2026-10-09T18:20:50+00:00",
+        "days_until_expiry": 407,
+        "is_expired": false,
+        "expires_soon": false,
+        "registrar": "MarkMonitor Inc."
+      },
+      "ssl_check": {
+        "domain": "github.com",
+        "status": "success",
+        "expiration_date": "2026-02-05T23:59:59+00:00",
+        "days_until_expiry": 162,
+        "is_expired": false,
+        "expires_soon": false,
+        "subject": [
+          [
+            [
+              "commonName",
+              "github.com"
+            ]
+          ]
+        ],
+        "issuer": [
+          [
+            [
+              "countryName",
+              "GB"
+            ]
+          ],
+          [
+            [
+              "stateOrProvinceName",
+              "Greater Manchester"
+            ]
+          ],
+          [
+            [
+              "localityName",
+              "Salford"
+            ]
+          ],
+          [
+            [
+              "organizationName",
+              "Sectigo Limited"
+            ]
+          ],
+          [
+            [
+              "commonName",
+              "Sectigo ECC Domain Validation Secure Server CA"
+            ]
+          ]
+        ]
+      },
+      "checked_at": "2025-08-27T11:40:57.873728"
+    }
+  ],
+  "alerts": []
+}

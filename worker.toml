@@ -1,0 +1,10 @@
+[[worker]]
+
+[worker.config]
+id = "demo-worker"
+enabled = true
+timeout = 30
+retries = 3
+secret = "4a765ee6fdc11cec148cbcc183b97c47"
+[worker.local_source]
+packages = [ "./domain_name_toolkit",]
