@@ -11,7 +11,6 @@ This repository demonstrates a comprehensive implementation of Arcade.dev's tool
 This is the top-level of the mono-repo containing several projects, each serving different purposes.
 
 ### Core Examples
- * `problem/` — Contains the [original PDF with the interview problem statement](problem/problem-statement.pdf)
  * `client_js_setstars/` — JavaScript client demonstrating Arcade.dev's GitHub and Math toolkits
    - Uses `@arcadeai/arcadejs` SDK v1.9.1
    - Implements `Github.SetRepoStars` and `Math.Sqrt` operations
@@ -121,8 +120,6 @@ arcade-sample-toolkit/
 │   ├── config_loader.py
 │   ├── domain_monitor_config.yaml
 │   └── tests/
-├── problem/                     # Original requirements
-│   └── problem-statement.pdf
 ├── doc/img/                     # Documentation images
 ├── requirements.txt             # Python dependencies
 ├── Makefile                     # Build automation
