@@ -1,5 +1,9 @@
 # Domain Monitor Toolkit - Updated Version
 
+> [!TIP]
+> **CI STATUS**
+> [![Tests](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml) [![Lint](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml)
+
 A production-ready domain and SSL certificate monitoring solution with YAML configuration, comprehensive testing, and automated workflows.
 
 ## ✨ What's New in This Version
