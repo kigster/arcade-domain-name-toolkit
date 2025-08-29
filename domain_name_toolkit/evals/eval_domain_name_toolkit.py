@@ -35,14 +35,22 @@ def domain_name_toolkit_eval_suite() -> EvalSuite:
     suite.add_case(
         name="Check domain expiry",
         user_message="When does example.com expire?",
-        expected_tool_calls=[ExpectedToolCall(func="check_domain_expiry", args={"domain": "example.com"})],
+        expected_tool_calls=[
+            ExpectedToolCall(func="check_domain_expiry", args={"domain": "example.com"})
+        ],
         rubric=rubric,
         critics=[
             SimilarityCritic(critic_field="domain", weight=0.5),
         ],
         additional_messages=[
-            {"role": "user", "content": "I need to know the expiration date for example.com"},
-            {"role": "assistant", "content": "I'll check the domain expiration for you."},
+            {
+                "role": "user",
+                "content": "I need to know the expiration date for example.com",
+            },
+            {
+                "role": "assistant",
+                "content": "I'll check the domain expiration for you.",
+            },
         ],
     )
 

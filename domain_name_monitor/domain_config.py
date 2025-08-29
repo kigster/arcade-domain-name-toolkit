@@ -34,7 +34,7 @@ EMAIL_RECIPIENTS = [
 
 # Slack notification settings (optional)
 ENABLE_SLACK_ALERTS = False  # Set to True if you want Slack notifications
-SLACK_CHANNEL = "#alerts"    # Change this to your preferred channel
+SLACK_CHANNEL = "#alerts"  # Change this to your preferred channel
 
 # Output settings
 SAVE_RESULTS_TO_FILE = True
