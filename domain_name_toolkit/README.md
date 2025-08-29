@@ -34,7 +34,7 @@ A complete domain and SSL certificate monitoring solution built with Arcade.dev 
 ## Features
 
 - **Domain Registration Monitoring**: Checks WHOIS data for domain expiration dates
-- **SSL Certificate Monitoring**: Validates SSL certificate expiration dates  
+- **SSL Certificate Monitoring**: Validates SSL certificate expiration dates
 - **Email Alerts**: Sends detailed email notifications via Gmail
 - **Slack Integration**: Optional Slack channel notifications
 - **Configurable Thresholds**: Set custom alert timeframes (default: 30 days)
@@ -61,17 +61,20 @@ DOMAIN_MONITOR_README.md           # This file
 ## Installation
 
 1. **Install dependencies**:
+
    ```bash
    pip install arcade-ai arcadepy python-whois
    ```
 
 2. **Install the custom toolkit**:
+
    ```bash
    cd domain_name_toolkit
    pip install -e .
    ```
 
 3. **Set up Arcade API key**:
+
    ```bash
    export ARCADE_API_KEY="your-api-key-here"
    ```
@@ -117,6 +120,7 @@ python domain_monitor_app.py
 ```
 
 This will:
+
 1. Check all configured domains and SSL certificates
 2. Generate alerts for expiring items
 3. Send email and/or Slack notifications
@@ -133,7 +137,7 @@ This tests the toolkit functions directly without using Arcade's API.
 ### Example Output
 
 ```
-🔍 Domain Monitor Starting...
+Domain Monitor Starting...
 Monitoring 4 domains
 
 📋 Checking domains...
@@ -142,15 +146,15 @@ Checking domain: github.com
 Checking domain: example.com
 Checking domain: stackoverflow.com
 
-📊 Summary:
+Summary:
    Domains checked: 4
    Alerts generated: 0
 
-✅ All domains and certificates are healthy!
+All domains and certificates are healthy!
 
-💾 Results saved to domain_check_results.json
+Results saved to domain_check_results.json
 
-🏁 Domain monitoring complete!
+Domain monitoring complete!
 ```
 
 ## Toolkit Functions
@@ -160,9 +164,11 @@ Checking domain: stackoverflow.com
 Checks domain registration expiration using WHOIS data.
 
 **Parameters:**
+
 - `domain` (str): Domain name to check (e.g., 'example.com')
 
 **Returns:**
+
 ```json
 {
   "domain": "example.com",
@@ -180,12 +186,14 @@ Checks domain registration expiration using WHOIS data.
 Checks SSL certificate expiration by connecting to the domain.
 
 **Parameters:**
+
 - `domain` (str): Domain name to check SSL certificate
 
 **Returns:**
+
 ```json
 {
-  "domain": "example.com", 
+  "domain": "example.com",
   "status": "success",
   "expiration_date": "2026-01-15T23:59:59+00:00",
   "days_until_expiry": 141,
@@ -212,6 +220,7 @@ When domains or certificates are expiring within the threshold:
 ### Slack Alerts
 
 Concise Slack messages with:
+
 - 🔴 Critical alerts (≤7 days)
 - 🟡 Warning alerts (8-30 days)
 - Domain name and expiration timeline
@@ -235,8 +244,8 @@ Create `.github/workflows/domain-check.yml`:
 name: Domain Monitor
 on:
   schedule:
-    - cron: '0 9 * * *'  # Daily at 9 AM UTC
-  
+    - cron: "0 9 * * *" # Daily at 9 AM UTC
+
 jobs:
   check-domains:
     runs-on: ubuntu-latest
@@ -245,7 +254,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'
+          python-version: "3.10"
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
@@ -261,17 +270,20 @@ jobs:
 ### Common Issues
 
 1. **"Not logged in to Arcade CLI"**
+
    ```bash
    arcade login
    # Follow the authentication prompts
    ```
 
 2. **WHOIS lookup failures**
+
    - Some domains may have restricted WHOIS access
    - Check domain spelling and availability
    - Verify internet connectivity
 
 3. **SSL connection errors**
+
    - Domain may not support HTTPS
    - Firewall blocking port 443
    - Certificate may already be expired
@@ -285,8 +297,9 @@ jobs:
 ### Error Handling
 
 The toolkit includes comprehensive error handling:
+
 - Network timeouts and connection failures
-- WHOIS service unavailability  
+- WHOIS service unavailability
 - SSL handshake errors
 - Invalid domain names
 - API rate limiting
@@ -306,6 +319,7 @@ Modify alert thresholds, email templates, or Slack message formats in `domain_mo
 ### Extending Functionality
 
 The toolkit can be extended with additional functions:
+
 - DNS record monitoring
 - Website uptime checks
 - Certificate chain validation
@@ -326,6 +340,7 @@ This project is part of the Arcade.dev sample toolkit and follows the same licen
 ## Support
 
 For issues with the toolkit:
+
 1. Check the troubleshooting section above
 2. Verify all dependencies are installed
 3. Ensure Arcade API key is properly configured
