@@ -69,10 +69,12 @@ make run-simple           # Test domain checking functions
 ````bash
 export ARCADE_API_KEY="your-key-here"
 make run                  # Full monitoring with notifications
+```
 
 ## 📋 Available Commands
 
 ### Testing
+
 ```bash
 make test                 # Run all tests
 make test-coverage        # Run with coverage report
