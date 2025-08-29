@@ -22,7 +22,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     
     - name: Cache pip dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('**/requirements.txt', '**/pyproject.toml') }}
@@ -35,6 +35,10 @@ jobs:
         pip install -r requirements.txt
         pip install -e ./domain_name_toolkit
         pip install ruff
+        echo "Python version: $(python --version)"
+        echo "Pip version: $(pip --version)"
+        echo "Current directory: $(pwd)"
+        echo "Directory contents: $(ls -la)"
     
     - name: Run linting
       run: make lint
@@ -46,7 +50,7 @@ jobs:
     
     - name: Upload lint results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: lint-results
         path: |
