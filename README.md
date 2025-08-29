@@ -1,10 +1,11 @@
 # Domain Monitor Toolkit - Updated Version
 
-> [!TIP] > [![Tests](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml) [![Lint](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml)
+> [!TIP]
+> [![Tests](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/test.yml) [![Lint](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml/badge.svg)](https://github.com/kigster/arcade-domain-name-toolkit/actions/workflows/lint.yml)
 
 A production-ready domain and SSL certificate monitoring solution with YAML configuration, comprehensive testing, and automated workflows.
 
-## ✨ What's New in This Version
+## What's New in This Version
 
 ![UML](doc/img/domain-toolkit-uml.png)
 
@@ -22,7 +23,7 @@ A production-ready domain and SSL certificate monitoring solution with YAML conf
 - **Coverage reporting** with HTML output
 - **CI/CD ready** test suite
 
-### 🛠 Professional Development Tools
+### Professional Development Tools
 
 - **Makefile** with 20+ commands for common tasks
 - **Code formatting and linting** support
@@ -272,7 +273,7 @@ make docker-build      # Build container
 make docker-run        # Run in container
 ```
 
-## 📈 Example Output
+## Example Output
 
 ### Successful Run
 
@@ -327,7 +328,7 @@ make ci-test           # Full CI pipeline
 - **Configuration Tests**: YAML parsing and validation
 - **Error Handling Tests**: Network failures and edge cases
 
-## 🎯 Development Workflow
+## Development Workflow
 
 ### Daily Development
 
@@ -354,7 +355,7 @@ make clean           # Clean up artifacts
 4. Update documentation
 5. Test with `make run-simple`
 
-## 📝 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
