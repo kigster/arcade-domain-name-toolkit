@@ -10,7 +10,8 @@ from unittest.mock import Mock, MagicMock
 import yaml
 
 from config_loader import DomainMonitorConfig, DomainConfig, EmailRecipient
-from domain_name_toolkit.tools.hello import check_domain_expiry, check_ssl_expiry
+from domain_name_toolkit.tools.check_domain_expiry import check_domain_expiry
+from domain_name_toolkit.tools.check_ssl_expiry import check_ssl_expiry
 
 
 @pytest.fixture

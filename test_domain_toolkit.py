@@ -4,7 +4,8 @@
 Test script for the Domain Name Toolkit
 """
 
-from domain_name_toolkit.tools.hello import check_domain_expiry, check_ssl_expiry
+from domain_name_toolkit.tools.check_domain_expiry import check_domain_expiry
+from domain_name_toolkit.tools.check_ssl_expiry import check_ssl_expiry
 import json
 
 def test_domain_functions():

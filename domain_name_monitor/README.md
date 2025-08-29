@@ -15,17 +15,18 @@ A complete domain and SSL certificate monitoring solution built with Arcade.dev 
 ## Project Structure
 
 ```
-domain_name_toolkit/                 # Custom Arcade toolkit
+domain_name_toolkit/                # Custom Arcade toolkit
 ├── domain_name_toolkit/
 │   └── tools/
-│       └── hello.py                # Domain checking functions
+│       ├── check_domain_expiry.py  # Domain expiration checking
+│       └── check_ssl_expiry.py     # SSL certificate expiration checking
 ├── pyproject.toml                  # Toolkit configuration
 └── README.md
 
 domain_monitor_app.py               # Main monitoring application
-domain_config.py                   # Configuration file
-test_domain_toolkit.py             # Direct function tests
-DOMAIN_MONITOR_README.md           # This file
+domain_config.py                    # Configuration file
+test_domain_toolkit.py              # Direct function tests
+DOMAIN_MONITOR_README.md            # This file
 ```
 
 ## Installation

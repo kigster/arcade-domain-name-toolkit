@@ -20,11 +20,10 @@
   </a>
 </div>
 
+<br />
+<br />
 
-<br>
-<br>
-
-# Arcade **Domain Name Toolkit**``
+# Arcade **Domain Name Toolkit**
 
 Monitor domains and SSL certificate expiration dates for websites and notify via Gmail or Slack.
 
@@ -48,7 +47,8 @@ A complete domain and SSL certificate monitoring solution built with Arcade.dev 
 domain_name_toolkit/                 # Custom Arcade toolkit
 ├── domain_name_toolkit/
 │   └── tools/
-│       └── hello.py                # Domain checking functions
+│       ├── check_domain_expiry.py  # Domain expiration checking
+│       └── check_ssl_expiry.py     # SSL certificate expiration checking
 ├── pyproject.toml                  # Toolkit configuration
 └── README.md
 
