@@ -23,10 +23,16 @@ setup: install-dev ## Complete setup - install deps and toolkit
 	@echo "   - Domain toolkit installed in development mode"
 	@echo "   - Testing tools available"
 
-# Testing targets
-test: ## Run all tests
-	@echo "🧪 Running unit tests..."
-	cd domain_name_monitor && python -m pytest tests/ -v --tb=short
+
+test:	test-toolkit test-monitor ## Run all available tests in this repo
+
+test-monitor:  ## Run tests for domain_name_monitor folder
+	@echo "🧪 Running domain_name_monitor unit tests..."
+	cd domain_name_monitor && python -m pytest tests/ -v --tb=short ; cd -
+
+test-toolkit:  ## Run tests inside the domain_name_toolkit folder
+	@echo "🧪 Running Toolkit's unit tests..."
+	cd domain_name_toolkit && python -m pytest tests/ -v --tb=short; cd -
 
 test-verbose: ## Run tests with verbose output
 	@echo "🧪 Running tests with verbose output..."
@@ -113,10 +119,6 @@ install-toolkit: ## Install the domain toolkit in development mode
 	@echo "📦 Installing domain toolkit..."
 	cd domain_name_toolkit && pip install -e .
 	@echo "✅ Domain toolkit installed"
-
-test-toolkit: ## Test toolkit functions directly
-	@echo "🧪 Testing domain toolkit functions..."
-	python test_domain_toolkit.py
 
 deploy-toolkit: ## Deploy toolkit to Arcade Cloud (requires authentication)
 	@echo "🚀 Deploying toolkit to Arcade Cloud..."
