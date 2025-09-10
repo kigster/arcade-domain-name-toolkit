@@ -9,8 +9,7 @@ from arcade_tdk import tool
 def check_ssl_expiry(
     domain: Annotated[
         str, "The domain name to check SSL certificate (e.g., 'example.com')"
-    ],
-    port: Annotated[int, "The port to check SSL certificate (e.g., 443)"] = 443,
+    ]
 ) -> dict:
     """Check when a domain's SSL certificate expires."""
 
@@ -63,6 +62,12 @@ def check_ssl_expiry(
         return {"domain": domain, "status": "error", "message": "Connection timeout"}
     except ssl.SSLError as e:
         return {"domain": domain, "status": "error", "message": f"SSL error: {str(e)}"}
+    except TypeError as e:
+        return {
+            "domain": domain,
+            "status": "error",
+            "message": f"TypeError while checking SSL certificate: {str(e)}",
+        }
     except Exception as e:
         return {
             "domain": domain,
