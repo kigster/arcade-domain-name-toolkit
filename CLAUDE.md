@@ -12,14 +12,6 @@ This is the top-level of the mono-repo containing several projects, each serving
 
 ### Core Examples
 
-- `client_js_setstars/` — JavaScript client demonstrating Arcade.dev's GitHub and Math toolkits
-  - Uses `@arcadeai/arcadejs` SDK v1.9.1
-  - Implements `Github.SetRepoStars` and `Math.Sqrt` operations
-  - Node.js/ES modules implementation with Yarn package management
-- `client_py_getrepo/` — Python client for GitHub repository operations
-  - Authenticates against GitHub accounts
-  - Retrieves information about `kigster/githuh` repository
-  - Demonstrates basic Arcade.dev Python SDK usage
 - `domain_name_toolkit` - the custom toolkit that's been scaffolded using the `arcade new` command and provides two functions: `check_domain_expiry()` and `check_ssl_expiry()` which given a domain determine if the domain and SSL are current, and if they are within 60 days of renewal (configurable).
 - `domain_name_monitor` - a Python app that utilizes the toolkit to perform notifications when a domain expires to a configurable email address.
 
@@ -82,13 +74,6 @@ The project includes comprehensive build automation:
 3. If using `direnv` run `direnv allow .` to load the value into the environment.
 
 Verify that `$ARCADE_API_KEY` is set, and if not source `.env` to get it set.
-
-You should be able to execute a command `make run` from the top level `Makefile`, which will then go into each of the following example projects and run them:
-
-- `client_js_setstars`
-- `client_py_getrepo`
-
-It will run each project by issuing `make run` inside each folder, which should install all the dependencies and execute the calls.
 
 ## Development Workflow
 
