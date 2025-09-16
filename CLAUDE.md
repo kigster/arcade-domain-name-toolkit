@@ -12,14 +12,14 @@ This is the top-level of the mono-repo containing several projects, each serving
 
 ### Core Examples
 
-- `domain_name_toolkit` - the custom toolkit that's been scaffolded using the `arcade new` command and provides two functions: `check_domain_expiry()` and `check_ssl_expiry()` which given a domain determine if the domain and SSL are current, and if they are within 60 days of renewal (configurable).
+- `domain_name` - the custom toolkit that's been scaffolded using the `arcade new` command and provides two functions: `check_domain_expiry()` and `check_ssl_expiry()` which given a domain determine if the domain and SSL are current, and if they are within 60 days of renewal (configurable).
 - `domain_name_monitor` - a Python app that utilizes the toolkit to perform notifications when a domain expires to a configurable email address.
 
 ### Domain Monitoring System Details
 
 The domain monitoring components provide comprehensive functionality:
 
-**Domain Name Toolkit (`domain_name_toolkit/`)**
+**Domain Name Toolkit (`domain_name/`)**
 
 - Built with Arcade TDK (Toolkit Development Kit) v2.0.0
 - Provides `check_domain_expiry()` and `check_ssl_expiry()` functions
@@ -100,8 +100,8 @@ arcade-sample-toolkit/
 ├── client_py_getrepo/           # Python Arcade client
 │   ├── arcade_get_repo.py
 │   └── Makefile
-├── domain_name_toolkit/         # Custom Arcade toolkit
-│   ├── domain_name_toolkit/
+├── domain_name/         # Custom Arcade toolkit
+│   ├── domain_name/
 │   │   └── tools/
 │   ├── tests/
 │   ├── evals/

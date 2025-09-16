@@ -7,7 +7,7 @@ from arcade_evals import (
 )
 from arcade_evals.critic import SimilarityCritic
 
-import domain_name_toolkit
+import domain_name
 
 # Evaluation rubric
 rubric = EvalRubric(
@@ -17,15 +17,15 @@ rubric = EvalRubric(
 
 
 catalog = ToolCatalog()
-catalog.add_module(domain_name_toolkit)
+catalog.add_module(domain_name)
 
 
 @tool_eval()
-def domain_name_toolkit_eval_suite() -> EvalSuite:
+def domain_name_eval_suite() -> EvalSuite:
     suite = EvalSuite(
-        name="domain_name_toolkit Tools Evaluation",
+        name="domain_name Tools Evaluation",
         system_message=(
-            "You are an AI assistant with access to domain_name_toolkit tools. "
+            "You are an AI assistant with access to domain_name tools. "
             "Use them to help the user with their tasks."
         ),
         catalog=catalog,

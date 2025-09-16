@@ -6,17 +6,17 @@
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 8px;">
-  <img src="https://img.shields.io/github/v/release/kigster/domain_name_toolkit" alt="GitHub release" style="margin: 0 2px;">
+  <img src="https://img.shields.io/github/v/release/kigster/domain_name" alt="GitHub release" style="margin: 0 2px;">
   <img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python version" style="margin: 0 2px;">
   <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License" style="margin: 0 2px;">
-  <img src="https://img.shields.io/pypi/v/domain_name_toolkit" alt="PyPI version" style="margin: 0 2px;">
+  <img src="https://img.shields.io/pypi/v/domain_name" alt="PyPI version" style="margin: 0 2px;">
 </div>
 <div style="display: flex; justify-content: center; align-items: center;">
-  <a href="https://github.com/kigster/domain_name_toolkit" target="_blank">
-    <img src="https://img.shields.io/github/stars/kigster/domain_name_toolkit" alt="GitHub stars" style="margin: 0 2px;">
+  <a href="https://github.com/kigster/domain_name" target="_blank">
+    <img src="https://img.shields.io/github/stars/kigster/domain_name" alt="GitHub stars" style="margin: 0 2px;">
   </a>
-  <a href="https://github.com/kigster/domain_name_toolkit/fork" target="_blank">
-    <img src="https://img.shields.io/github/forks/kigster/domain_name_toolkit" alt="GitHub forks" style="margin: 0 2px;">
+  <a href="https://github.com/kigster/domain_name/fork" target="_blank">
+    <img src="https://img.shields.io/github/forks/kigster/domain_name" alt="GitHub forks" style="margin: 0 2px;">
   </a>
 </div>
 
@@ -44,8 +44,8 @@ A complete domain and SSL certificate monitoring solution built with Arcade.dev 
 ## Project Structure
 
 ```
-domain_name_toolkit/                 # Custom Arcade toolkit
-├── domain_name_toolkit/
+domain_name/                 # Custom Arcade toolkit
+├── domain_name/
 │   └── tools/
 │       ├── check_domain_expiry.py  # Domain expiration checking
 │       └── check_ssl_expiry.py     # SSL certificate expiration checking
@@ -69,7 +69,7 @@ DOMAIN_MONITOR_README.md           # This file
 2. **Install the custom toolkit**:
 
    ```bash
-   cd domain_name_toolkit
+   cd domain_name
    pip install -e .
    ```
 
@@ -258,7 +258,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          cd domain_name_toolkit && pip install -e .
+          cd domain_name && pip install -e .
       - name: Run domain check
         env:
           ARCADE_API_KEY: ${{ secrets.ARCADE_API_KEY }}
@@ -290,7 +290,7 @@ jobs:
 
 4. **Toolkit not found**
    ```bash
-   cd domain_name_toolkit
+   cd domain_name
    pip install -e .
    ```
 

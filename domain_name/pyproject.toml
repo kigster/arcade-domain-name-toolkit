@@ -3,7 +3,7 @@ requires = [ "hatchling",]
 build-backend = "hatchling.build"
 
 [project]
-name = "domain_name_toolkit"
+name = "domain_name"
 version = "0.1.0"
 description = "Monitor domain and SSL certificate expiration dates for websites"
 requires-python = ">=3.10"
@@ -14,7 +14,6 @@ dependencies = [
 [[project.authors]]
 name = "Konstantin Gredeskoul"
 email = "kig@kig.re"
-
 
 [project.optional-dependencies]
 dev = [
@@ -32,10 +31,10 @@ dev = [
 
 # Tell Arcade.dev that this package is a toolkit
 [project.entry-points.arcade_toolkits]
-toolkit_name = "domain_name_toolkit"
+toolkit_name = "domain_name"
 
 [tool.mypy]
-files = [ "domain_name_toolkit/**/*.py",]
+files = [ "domain_name/**/*.py",]
 python_version = "3.10"
 disallow_untyped_defs = "True"
 disallow_any_unimported = "True"
@@ -53,4 +52,4 @@ testpaths = [ "tests",]
 skip_empty = true
 
 [tool.hatch.build.targets.wheel]
-packages = [ "domain_name_toolkit",]
+packages = [ "domain_name",]

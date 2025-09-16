@@ -7,8 +7,8 @@ import ssl
 from datetime import datetime, timezone, timedelta
 from unittest.mock import Mock, patch, MagicMock
 
-from domain_name_toolkit.tools.check_domain_expiry import check_domain_expiry
-from domain_name_toolkit.tools.check_ssl_expiry import check_ssl_expiry
+from domain_name.tools.check_domain_expiry import check_domain_expiry
+from domain_name.tools.check_ssl_expiry import check_ssl_expiry
 
 
 class TestDomainExpiryCheck:

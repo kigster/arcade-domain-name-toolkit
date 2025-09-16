@@ -25,9 +25,10 @@ class DomainMonitor:
     def authorize_tools(self):
         """Authorize all required tools."""
         tools_to_authorize = [
-            "domain_name_toolkit.check_domain_expiry",
-            "domain_name_toolkit.check_ssl_expiry",
+            "DomainName.CheckDomainExpiry",
+            "DomainName.CheckSSLExpiry",
             "Gmail.SendEmail",
+            "Slack.SendMessage",
         ]
 
         # Add Slack if enabled
@@ -52,14 +53,14 @@ class DomainMonitor:
 
         # Check domain registration expiry
         domain_result = self.client.tools.execute(
-            tool_name="domain_name_toolkit.check_domain_expiry",
+            tool_name="domain_name.check_domain_expiry",
             input={"domain": domain},
             user_id=self.config.monitoring.user_id,
         )
 
         # Check SSL certificate expiry
         ssl_result = self.client.tools.execute(
-            tool_name="domain_name_toolkit.check_ssl_expiry",
+            tool_name="domain_name.check_ssl_expiry",
             input={"domain": domain},
             user_id=self.config.monitoring.user_id,
         )

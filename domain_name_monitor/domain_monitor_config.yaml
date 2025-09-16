@@ -91,7 +91,7 @@ advanced:
   output:
     console_colors: true
     json_pretty_print: true
-    
+
 # Test Configuration
 # Used for unit tests and development
 testing:

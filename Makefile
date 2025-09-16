@@ -15,7 +15,7 @@ install: ## Install production dependencies
 	pip install -r requirements.txt
 
 install-dev: install ## Install development dependencies (includes testing tools)
-	pip install -e ./domain_name_toolkit
+	pip install -e ./domain_name
 
 setup: install-dev ## Complete setup - install deps and toolkit
 	@echo "✅ Setup complete!"
@@ -30,9 +30,9 @@ test-monitor:  ## Run tests for domain_name_monitor folder
 	@echo "🧪 Running domain_name_monitor unit tests..."
 	cd domain_name_monitor && python -m pytest tests/ -v --tb=short ; cd -
 
-test-toolkit:  ## Run tests inside the domain_name_toolkit folder
+test-toolkit:  ## Run tests inside the domain_name folder
 	@echo "🧪 Running Toolkit's unit tests..."
-	cd domain_name_toolkit && python -m pytest tests/ -v --tb=short; cd -
+	cd domain_name && python -m pytest tests/ -v --tb=short; cd -
 
 test-verbose: ## Run tests with verbose output
 	@echo "🧪 Running tests with verbose output..."
@@ -40,7 +40,7 @@ test-verbose: ## Run tests with verbose output
 
 test-coverage: ## Run tests with coverage report
 	@echo "🧪 Running tests with coverage..."
-	cd domain_name_monitor && python -m pytest tests/ -v --cov=domain_name_toolkit --cov=config_loader --cov=domain_monitor_app --cov-report=html --cov-report=term-missing
+	cd domain_name_monitor && python -m pytest tests/ -v --cov=domain_name --cov=config_loader --cov=domain_monitor_app --cov-report=html --cov-report=term-missing
 
 test-quick: ## Run tests without coverage (faster)
 	@echo "🧪 Running quick tests..."
@@ -117,12 +117,12 @@ validate-config: ## Validate YAML configuration file
 # Toolkit development targets
 install-toolkit: ## Install the domain toolkit in development mode
 	@echo "📦 Installing domain toolkit..."
-	cd domain_name_toolkit && pip install -e .
+	cd domain_name && pip install -e .
 	@echo "✅ Domain toolkit installed"
 
 deploy-toolkit: ## Deploy toolkit to Arcade Cloud (requires authentication)
 	@echo "🚀 Deploying toolkit to Arcade Cloud..."
-	cd domain_name_toolkit && arcade deploy
+	cd domain_name && arcade deploy
 
 # Docker targets (if you want to add Docker support later)
 docker-build: ## Build Docker image
@@ -153,7 +153,7 @@ info: ## Show project information
 	@echo "======================================"
 	@echo ""
 	@echo "🏗️  Project Structure:"
-	@echo "   domain_name_toolkit/     - Custom Arcade toolkit"
+	@echo "   domain_name/     - Custom Arcade toolkit"
 	@echo "   domain_monitor_app.py    - Main monitoring application"
 	@echo "   config_loader.py         - YAML configuration loader"
 	@echo "   domain_monitor_config.yaml - Configuration file"

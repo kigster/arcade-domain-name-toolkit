@@ -51,8 +51,8 @@ class TestDomainMonitor:
             # Should authorize domain tools and Gmail
             assert mock_arcade_client.tools.authorize.call_count == 3
             expected_tools = [
-                "domain_name_toolkit.check_domain_expiry",
-                "domain_name_toolkit.check_ssl_expiry",
+                "domain_name.check_domain_expiry",
+                "domain_name.check_ssl_expiry",
                 "Gmail.SendEmail",
             ]
 

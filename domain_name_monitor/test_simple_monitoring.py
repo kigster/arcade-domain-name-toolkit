@@ -5,8 +5,8 @@ Simple test of domain monitoring without Arcade authorization
 This tests the core functionality by directly calling the toolkit functions
 """
 
-from domain_name_toolkit.tools.check_domain_expiry import check_domain_expiry
-from domain_name_toolkit.tools.check_ssl_expiry import check_ssl_expiry
+from domain_name.tools.check_domain_expiry import check_domain_expiry
+from domain_name.tools.check_ssl_expiry import check_ssl_expiry
 import json
 from datetime import datetime
 
